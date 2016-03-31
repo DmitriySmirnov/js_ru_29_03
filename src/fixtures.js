@@ -1,32 +1,31 @@
 export const articles = [
     {
-        title: 'article title1',
-        text: 'article text 1',
-        comments: [
+        id: "grc",
+        title: "my trip to greece",
+        text: "I'm running, running, running away",
+        comments:[
             {
-                text: 'some comment',
-                id: 1
+                id:1,
+                text:"some comment"
             },
             {
-                text: 'some other comment',
-                id: 2
-            }
-        ],
-        id: 1
+                id:2,
+                text:"stupid comment"
+            },
+            {
+                id:3,
+                text:"yet another comment"
+            },
+        ]
     },
     {
-        title: 'article title2',
-        text: 'article text 2',
-        id: 2
+        id: "trm",
+        title: "toronto business trip",
+        text: "riding, swimming, flying"
     },
     {
-        title: 'article title3',
-        text: 'article text 3',
-        id: 3
-    },
-    {
-        title: 'article title4',
-        text: 'article text 4',
-        id: 4
+        id: "msk",
+        title: "hollidays in msk",
+        text: "Lorem ipsumy Lorem ipsumy Lorem ipsumyLorem ipsumyLorem ipsumy Lorem ipsumy"
     }
 ]
