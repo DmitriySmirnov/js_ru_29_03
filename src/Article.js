@@ -1,14 +1,15 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
-class Article extends Component{
+class Article extends Component {
     state = {
         isOpen: false,
         areCommentsVisible: false
     }
-    render(){
+
+    render() {
         const {title, text} =  this.props.article;
-        const body = this.state.isOpen?<section>{text}</section>:null
-        const comments =  this.state.isOpen?this.getCommentsBlock():null
+        const body = this.state.isOpen ? <section>{text}</section> : null
+        const comments = this.state.isOpen ? this.getCommentsBlock() : null
 
         return (
             <div>
@@ -33,19 +34,22 @@ class Article extends Component{
 
     getCommentsBlock = () => {
         const comments = this.props.article.comments;
-        if(comments == null) {
+
+        if (comments == null) {
             return null;
         }
 
         var commentHeaderText = null;
         var commentsList = null;
-        if(this.state.areCommentsVisible){
+
+        if (this.state.areCommentsVisible) {
             commentHeaderText = "Hide comments";
             const commentsListItems = comments.map((comment)=>
-            <li key={comment.id}>{comment.text}</li>);
+                <li key={comment.id}>{comment.text}</li>);
+
             commentsList = <ul>{commentsListItems}</ul>
         }
-        else{
+        else {
             commentHeaderText = "Show comments";
         }
 
@@ -54,7 +58,7 @@ class Article extends Component{
         return (<div>
             {commentHeader}
             {commentsList}
-            </div>)
+        </div>)
     }
 
 }
