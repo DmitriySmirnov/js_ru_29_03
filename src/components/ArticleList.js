@@ -1,11 +1,8 @@
-import React, { Component, PropTypes } from 'react'
+import React, {Component, PropTypes} from 'react'
 import Article from './Article'
+import selectSingleItem from '../HOC/selectSingleItem'
 
 class AricleList extends Component {
-    state = {
-        selectedArticles: []
-    }
-
     render() {
         return (
             <div>
@@ -20,19 +17,13 @@ class AricleList extends Component {
         return this.props.articles.map((article, index) =>
             <li key={article.id}>
                 <Article
-                    article = {article}
-                    isSelected = {this.state.selectedArticles.includes(article.id)}
-                    selectArticle = {this.selectArticle}
+                    article={article}
+                    isSelected={this.props.selectedItemId == article.id}
+                    selectArticle={this.props.selectItemCommand }
                 />
             </li>
         )
     }
-
-    selectArticle = (id) => {
-        this.setState({
-            selectedArticles: this.state.selectedArticles.concat(id)
-        })
-    }
 }
 
-export default AricleList
+export default selectSingleItem(AricleList)

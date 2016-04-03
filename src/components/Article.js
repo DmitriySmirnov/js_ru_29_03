@@ -11,7 +11,7 @@ class Article extends Component {
         return (
             <div ref = "articleContainer">
                 <h3 onClick = {this.handleClick} style = {style}>{title}</h3>
-                <a href = "#" onClick = {this.handleSelect}>select this article</a>
+                <h4 style={{color:'blue'}} onClick = {this.handleSelect}>select this article</h4>
                 {this.getBody()}
             </div>
         )
